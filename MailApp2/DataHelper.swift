@@ -13,7 +13,11 @@ let CORE_DATA_ENTITY_EMAIL_RECEIVER = "EmailReceiver"
 let CORE_DATA_KEY_EMAIL_ID = "id"
 let CORE_DATA_KEY_EMAIL_RECEIVER = "receiver"
 
-let FILE_NAME_EMAIL_SUBJECT = "email_subject"
+let FILE_NAME_EMAIL_SUBJECT = NSHomeDirectory() + "/Documents/email_subject.plist"
+
+var dic = [String:String]()
+
+var didUpdateSubjectFromFile=false
 
 func getManagedObjectContext()->NSManagedObjectContext{
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -37,22 +41,26 @@ func getEmailReceivers(callback:EmailReceiverCallback){
     }
 }
 
-func getEmailSubjects(emailSubjectCallback:EmailSubjectCallback){
-    
+func getEmailSubject(id:Int)->String?{
+    if(!didUpdateSubjectFromFile){
+        updateEmailSubjectFromFile()
+    }
+    return dic[String(id)]
 }
 
+func updateEmailSubjectFromFile(){
+    didUpdateSubjectFromFile = true
+    dic = NSDictionary(contentsOfFile: FILE_NAME_EMAIL_SUBJECT) as? Dictionary<String, String> ?? dic
+}
 
-func saveEmail(receiver:String, subject:String){
-    let newId = getNewId()
-    
-    //save receiver in core data
+func saveEmailReceiver(id:Int, receiver:String){
     let managedObjectContext = getManagedObjectContext()
     
     let entity = NSEntityDescription.entity(forEntityName: CORE_DATA_ENTITY_EMAIL_RECEIVER, in: managedObjectContext)
     
     let emailReceiver = NSManagedObject(entity: entity!, insertInto: managedObjectContext)
     
-    emailReceiver.setValue(newId, forKey: CORE_DATA_KEY_EMAIL_ID)
+    emailReceiver.setValue(id, forKey: CORE_DATA_KEY_EMAIL_ID)
     emailReceiver.setValue(receiver, forKey: CORE_DATA_KEY_EMAIL_RECEIVER)
     
     do{
@@ -60,9 +68,24 @@ func saveEmail(receiver:String, subject:String){
     }catch{
         fatalError("save error")
     }
+}
+
+func saveEmailSubject(id:Int, subject:String){
+    if(!didUpdateSubjectFromFile){
+        updateEmailSubjectFromFile()
+    }
     
-    //save subject in file
+    dic[String(id)] = subject
+    NSDictionary.init(dictionary: dic).write(toFile: FILE_NAME_EMAIL_SUBJECT, atomically: true)
     
+    print(dic)//test
+}
+
+
+func saveEmail(receiver:String, subject:String){
+    let newId = getNewId()
+    saveEmailReceiver(id: newId, receiver: receiver)
+    saveEmailSubject(id: newId, subject: subject)
 }
 
 func getNewId()-> Int{

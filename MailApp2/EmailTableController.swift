@@ -36,9 +36,7 @@ class EmailTableController :UITableViewController,EmailReceiverCallback{
         let emailReceiver = emailReceivers[indexPath.row].value(forKey: "receiver") as? String
         let id = emailReceivers[indexPath.row].value(forKey: "id") as? Int
         cell.textLabel?.text = emailReceiver
-        cell.detailTextLabel?.text = String(id!)
-        
-        //todo emailSubject
+        cell.detailTextLabel?.text = getEmailSubject(id: id!)
         
         return cell
     }

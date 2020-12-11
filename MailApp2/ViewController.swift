@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UINavigationController {
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let ad = UIApplication.shared.delegate as? AppDelegate
+        guard ad?.persistentContainer != nil else {
+            fatalError("can't get persistentContainer from AppDelegate")
+        }
     }
-
-
+    
 }
 

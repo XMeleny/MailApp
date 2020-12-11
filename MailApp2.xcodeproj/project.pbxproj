@@ -10,9 +10,13 @@
 		4C3C1E0E258235B600C9CC92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C1E0D258235B600C9CC92 /* AppDelegate.swift */; };
 		4C3C1E10258235B600C9CC92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C1E0F258235B600C9CC92 /* SceneDelegate.swift */; };
 		4C3C1E12258235B600C9CC92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C1E11258235B600C9CC92 /* ViewController.swift */; };
-		4C3C1E15258235B600C9CC92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C1E13258235B600C9CC92 /* Main.storyboard */; };
-		4C3C1E17258235B900C9CC92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C1E16258235B900C9CC92 /* Assets.xcassets */; };
-		4C3C1E1A258235B900C9CC92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C1E18258235B900C9CC92 /* LaunchScreen.storyboard */; };
+		4C3C1E26258238D500C9CC92 /* EmailTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C1E25258238D500C9CC92 /* EmailTableController.swift */; };
+		4C3C1E2925823D4000C9CC92 /* EmailSendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C1E2825823D4000C9CC92 /* EmailSendController.swift */; };
+		4C3C1E5325824FD000C9CC92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C1E13258235B600C9CC92 /* Main.storyboard */; };
+		4C3C1E5425824FD000C9CC92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C1E18258235B900C9CC92 /* LaunchScreen.storyboard */; };
+		4C3C1E5825824FE100C9CC92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C1E16258235B900C9CC92 /* Assets.xcassets */; };
+		4C3C1E6C2582532100C9CC92 /* MyDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C1E6A2582532100C9CC92 /* MyDataModel.xcdatamodeld */; };
+		4C3C1E7D258280AF00C9CC92 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C1E7C258280AF00C9CC92 /* DataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		4C3C1E16258235B900C9CC92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C3C1E19258235B900C9CC92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C3C1E1B258235B900C9CC92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C3C1E25258238D500C9CC92 /* EmailTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTableController.swift; sourceTree = "<group>"; };
+		4C3C1E2825823D4000C9CC92 /* EmailSendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSendController.swift; sourceTree = "<group>"; };
+		4C3C1E6B2582532100C9CC92 /* MyDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyDataModel.xcdatamodel; sourceTree = "<group>"; };
+		4C3C1E7C258280AF00C9CC92 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +68,13 @@
 				4C3C1E0F258235B600C9CC92 /* SceneDelegate.swift */,
 				4C3C1E11258235B600C9CC92 /* ViewController.swift */,
 				4C3C1E13258235B600C9CC92 /* Main.storyboard */,
+				4C3C1E2825823D4000C9CC92 /* EmailSendController.swift */,
+				4C3C1E7C258280AF00C9CC92 /* DataHelper.swift */,
+				4C3C1E25258238D500C9CC92 /* EmailTableController.swift */,
 				4C3C1E16258235B900C9CC92 /* Assets.xcassets */,
 				4C3C1E18258235B900C9CC92 /* LaunchScreen.storyboard */,
 				4C3C1E1B258235B900C9CC92 /* Info.plist */,
+				4C3C1E6A2582532100C9CC92 /* MyDataModel.xcdatamodeld */,
 			);
 			path = MailApp2;
 			sourceTree = "<group>";
@@ -124,9 +136,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C3C1E1A258235B900C9CC92 /* LaunchScreen.storyboard in Resources */,
-				4C3C1E17258235B900C9CC92 /* Assets.xcassets in Resources */,
-				4C3C1E15258235B600C9CC92 /* Main.storyboard in Resources */,
+				4C3C1E5825824FE100C9CC92 /* Assets.xcassets in Resources */,
+				4C3C1E5325824FD000C9CC92 /* Main.storyboard in Resources */,
+				4C3C1E5425824FD000C9CC92 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +151,11 @@
 			files = (
 				4C3C1E12258235B600C9CC92 /* ViewController.swift in Sources */,
 				4C3C1E0E258235B600C9CC92 /* AppDelegate.swift in Sources */,
+				4C3C1E26258238D500C9CC92 /* EmailTableController.swift in Sources */,
+				4C3C1E7D258280AF00C9CC92 /* DataHelper.swift in Sources */,
+				4C3C1E2925823D4000C9CC92 /* EmailSendController.swift in Sources */,
 				4C3C1E10258235B600C9CC92 /* SceneDelegate.swift in Sources */,
+				4C3C1E6C2582532100C9CC92 /* MyDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.MailApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.MailApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -341,6 +357,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C3C1E6A2582532100C9CC92 /* MyDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C3C1E6B2582532100C9CC92 /* MyDataModel.xcdatamodel */,
+			);
+			currentVersion = 4C3C1E6B2582532100C9CC92 /* MyDataModel.xcdatamodel */;
+			path = MyDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4C3C1E02258235B600C9CC92 /* Project object */;
 }
